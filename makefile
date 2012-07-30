@@ -2,6 +2,8 @@
 CC = gcc
 CCFLAGS = -Wall -Werror -O2
 
+.PHONY: all clean cleanall debug install uninstall
+
 all: bf2nasm
 clean:
 	rm -f *.o
@@ -12,6 +14,8 @@ cleanall: clean
 debug: all
 	./bf2nasm < test.b > test.asm
 	nasm -o test.o -f elf32 test.asm
-	ld -o test test.o -lc
+	gcc -o test test.o
 	./test
-
+install: all
+	cp bf2nasm /usr/bin/bf2nasm
+uninstall:
