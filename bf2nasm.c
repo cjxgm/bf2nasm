@@ -15,12 +15,13 @@ int main(void)
 			"by eXerigumo Clanjor (哆啦比猫/兰威举).\n"
 			"[extern putchar]\n"
 			"[extern getchar]\n"
+			"[global _start]\n"
 			"\n"
 			"[section .bss]\n"
 			"mem:	resb 300000\n"
 			"\n"
 			"[section .text]\n"
-			"main:\n"
+			"_start:\n"
 			"\tmov		edi, mem\n"		 // the mem pointer
 		);
 
