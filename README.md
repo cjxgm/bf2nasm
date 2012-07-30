@@ -1,5 +1,5 @@
 # bf2nasm
-Brainfuck to nasm compiler<BR>
+Brainfuck to nasm compiler<br>
 
 ## Have a try!
 Just clone this repo, and do what you want!
@@ -41,7 +41,7 @@ into an executable file, type:
 	$ nasm -f elf32 -o output.o output.asm		# compile
 	$ ld -o output output.o -lc					# link to C library.
 
-I used `putchar	 and `getchar` located in `libc`, so we have to link to it.
+I used `putchar` and `getchar` located in `libc`, so we have to link to it.
 If the last step (the `ld` one) gives out an error, try:
 
 	$ gcc -o output output.o
