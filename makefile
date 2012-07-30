@@ -6,7 +6,6 @@ all: bf2nasm
 clean:
 	rm -f *.o
 	rm -f test.asm
-	rm -f test.o
 	rm -f test
 cleanall: clean
 	rm -f bf2nasm
