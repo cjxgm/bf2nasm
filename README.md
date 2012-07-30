@@ -39,12 +39,9 @@ Then you will get a well formatted nasm source code. To compile it
 into an executable file, type:
 
 	$ nasm -f elf32 -o output.o output.asm		# compile
-	$ ld -o output output.o -lc					# link to C library.
+	$ gcc -o output output.o					# link to C runtime
 
-I used `putchar` and `getchar` located in `libc`, so we have to link to it.
-If the last step (the `ld` one) gives out an error, try:
-
-	$ gcc -o output output.o
+I used `putchar` and `getchar`, so we have to link to C runtime library.
 
 #### Everything in one script:
 
@@ -54,7 +51,7 @@ If the last step (the `ld` one) gives out an error, try:
 	make clean
 	./bf2nasm < "$BFIN" > "$BFOUT.asm"
 	nasm -f elf32 -o "$BFOUT.o" "$BFOUT.asm"
-	ld -o "$BFOUT" "$BFOUT.o" -lc
+	gcc -o "$BFOUT" "$BFOUT.o"
 
 ## License
 Licensed under GPLv2.<br>
