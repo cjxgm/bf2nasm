@@ -17,5 +17,7 @@ debug: all
 	gcc -o test test.o
 	./test
 install: all
-	cp bf2nasm /usr/bin/bf2nasm
+	cp ./bf2nasm /usr/local/bin/bf2nasm
 uninstall:
+	rm -f /usr/local/bin/bf2nasm
+
