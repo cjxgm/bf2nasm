@@ -40,6 +40,7 @@ int main(void)
 			"[section .text]\n\n"
 			"main:\n"
 			"\tmov\t\tedi, mem\n\n"		 // the mem pointer
+			"\tmov\t\tedx, 1\n"
 		  );
 
 	while ((ch = getchar()) != EOF) {
@@ -80,7 +81,6 @@ int main(void)
 								"\tmov\t\teax, 3\n"
 								"\tmov\t\tebx, 0\n"
 								"\tmov\t\tecx, edi\n"
-								"\tmov\t\tedx, 1\n"
 								"\tint\t\t80h\n"
 							  );
 					break;
@@ -91,7 +91,6 @@ int main(void)
 								"\tmov\t\teax, 4\n"
 								"\tmov\t\tebx, 1\n"
 								"\tmov\t\tecx, edi\n"
-								"\tmov\t\tedx, 1\n"
 								"\tint\t\t80h\n"
 							  );
 					break;
