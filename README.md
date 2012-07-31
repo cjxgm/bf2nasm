@@ -10,7 +10,7 @@ Just clone this repo, and do what you want!
 
 	$ make
 
-### Compile and run test.b
+### Compile and run awib to compile awib.b itself
 
 	$ make debug
 
@@ -25,7 +25,7 @@ Remove all the intermediate files and `bf2nasm`, aka. do a full clean up.
 
 	$ make cleanall
 
-### Compile your own brainfuck app:
+### Compile your own brainfuck program:
 bf2nasm takes stdin as its input, and output the compiled nasm source
 code to stdout.
 
