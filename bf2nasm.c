@@ -36,20 +36,16 @@ int main(void)
 		  );
 #ifdef __CYGWIN32__
 	printf(
-			"%%define putchar _putchar\n"
-			"%%define getchar _getchar\n"
 			"%%define main _main\n"
 		  );
 #endif
 	printf(
-			"[extern putchar]\n"
-			"[extern getchar]\n"
 			"[global main]\n"
 			"\n"
 			"[section .bss]\n"
 			"mem:\tresb 300000\n"
 			"\n"
-			"[section .text]\n"
+			"[section .text]\n\n"
 			"main:\n"
 			"\tmov\t\tedi, mem\n\n"		 // the mem pointer
 		);
@@ -87,14 +83,20 @@ int main(void)
 					break;
 
 				case ',':
-					while (op_cnt--) printf("\tcall\tgetchar\n");
-					printf("\tmov\t\t[edi], al\n");
+					while (op_cnt--) printf("\tmov\t\teax,3\n"
+											"\tmov\t\tebx,1\n"
+											"\tmov\t\tecx,edi\n"
+											"\tmov\t\tedx,1\n"
+											"\tint\t\t0x80\n"
+											);
 					break;
 
 				case '.':
-					printf("\tpush\tdword [edi]\n");
-					while (op_cnt--) printf("\tcall\tputchar\n");
-					printf("\tadd\t\tesp, 4\n");
+					while (op_cnt--) printf("\tmov\t\teax,4\n"
+											"\tmov\t\tebx,1\n"
+											"\tmov\t\tecx,edi\n"
+											"\tmov\t\tedx,8\n"
+											"\tint\t\t0x80\n");
 					break;
 
 				case '[':
@@ -124,6 +126,9 @@ int main(void)
 			op_cnt = 1;
 		}
 	}
+	
+	//exit()
+	printf("\n\nmov eax,1\nmov ebx,1\nint 0x80\n\n");
 
 	// return 0
 	printf("\n\txor\t\teax, eax\n");
