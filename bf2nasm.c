@@ -37,7 +37,7 @@ int main(void)
 			"[section .bss]\n"
 			"mem:\tresb 300000\n"
 			"\n"
-			"[section .text]\n"
+			"[section .text]\n\n"
 			"main:\n"
 			"\tmov\t\tedi, mem\n\n"		 // the mem pointer
 		  );
@@ -123,7 +123,7 @@ int main(void)
 			op_cnt = 1;
 		}
 	}
-
+	
 	// return 0
 	printf("\n\tmov\t\teax, 1\n");
 	printf("\txor\t\tebx, ebx\n");
