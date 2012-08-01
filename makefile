@@ -14,7 +14,7 @@ cleanall: clean
 debug: all
 	./bf2nasm < awib.b > awib.asm
 	nasm -o awib.o -f elf32 awib.asm
-	gcc -o awib awib.o
+	ld -o awib awib.o
 	./awib < awib.b
 install: all
 	cp ./bf2nasm /usr/local/bin/bf2nasm

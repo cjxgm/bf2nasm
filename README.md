@@ -1,5 +1,6 @@
 # bf2nasm
 Brainfuck to nasm compiler<br>
+Linux(R) only!
 
 ## Have a try!
 Just clone this repo, and do what you want!
@@ -39,9 +40,7 @@ Then you will get a well formatted nasm source code. To compile it
 into an executable file, type:
 
 	$ nasm -f elf32 -o output.o output.asm		# compile
-	$ gcc -o output output.o					# link to C runtime
-
-I used `putchar` and `getchar`, so we have to link to C runtime library.
+	$ ld -o output output.o						# link to produce executable
 
 #### Everything in one script:
 
@@ -51,7 +50,7 @@ I used `putchar` and `getchar`, so we have to link to C runtime library.
 	make clean
 	./bf2nasm < "$BFIN" > "$BFOUT.asm"
 	nasm -f elf32 -o "$BFOUT.o" "$BFOUT.asm"
-	gcc -o "$BFOUT" "$BFOUT.o"
+	ld -o "$BFOUT" "$BFOUT.o"
 
 ## License
 Licensed under GPLv2.<br>
