@@ -1,4 +1,3 @@
-
 /* bf2nasm - brainfuck to nasm compiler */
 /*
  * This program is free software; you can redistribute it and/or modify
@@ -39,8 +38,8 @@ int main(void)
 			"\n"
 			"[section .text]\n\n"
 			"_start:\n"
-			"\tmov\t\tedi, mem\n\n"		 // the mem pointer
-			"\tmov\t\tedx, 1\n"
+			"\tmov\t\tedi, mem\n"		 // the mem pointer
+			"\tmov\t\tedx, 1\n\n"
 		  );
 
 	while ((ch = getchar()) != EOF) {
