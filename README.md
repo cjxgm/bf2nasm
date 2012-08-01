@@ -1,6 +1,8 @@
 # bf2nasm
 Brainfuck to nasm compiler<br>
-Linux(R) only!
+Licensed under GPLv2.<br>
+*ABSOLUTELY NO WARRANTY!*
+This software is for *Linux(R) only*!
 
 ## Have a try!
 Just clone this repo, and do what you want!
@@ -52,7 +54,6 @@ into an executable file, type:
 	nasm -f elf32 -o "$BFOUT.o" "$BFOUT.asm"
 	ld -o "$BFOUT" "$BFOUT.o"
 
-## License
-Licensed under GPLv2.<br>
-*ABSOLUTELY NO WARRANTY!*
+<!-- vim: ts=4 sw=4 sts=0 noet fenc=utf-8
+-->
 

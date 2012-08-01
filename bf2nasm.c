@@ -1,4 +1,6 @@
+
 /* bf2nasm - brainfuck to nasm compiler */
+
 /*
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -129,4 +131,6 @@ int main(void)
 
 	return 0;
 }
+
+// vim: ts=4 sw=4 sts=0 noet fenc=utf-8
 

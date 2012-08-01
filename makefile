@@ -21,3 +21,5 @@ install: all
 uninstall:
 	rm -f /usr/local/bin/bf2nasm
 
+# vim: ts=4 sw=4 sts=0 noet fenc=utf-8
+
